@@ -2854,7 +2854,7 @@ export function $internalCreateRangeSelection(
     anchorOffset = domSelection.anchorOffset;
     focusOffset = domSelection.focusOffset;
     if (
-      isSelectionChange &&
+      (isSelectionChange || eventType === undefined) &&
       $isRangeSelection(lastSelection) &&
       !isSelectionWithinEditor(editor, anchorDOM, focusDOM)
     ) {
